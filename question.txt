@@ -1,0 +1,17 @@
+a. How did you create your dataset and determine split of official logo versus not official logo?
+
+Collected pictures at etsy for the merch with the razorback on it and to collect pictures without the razorbacks I looked for random nature pictures. The split was trial and error. Best was a 0.72, 0.12, 0.16 split.
+
+b. Why did you choose the specific architecture for the final model?
+
+I used a small convolutional neural network with several Conv–ReLU–Pooling blocks and a simple fully connected classifier on top. This design follows the course example, is easy to explain, has enough capacity to learn the logo features, but is still small enough to limit overfitting on the relatively small dataset.
+
+c. How did you monitor and mitigate overfitting?
+
+I monitored training and validation loss and accuracy per epoch and looked for divergence between them. To reduce overfitting, I used a separate validation set, a relatively compact model, dropout in the classifier, and a limited number of training epochs.
+
+d. What future efforts do you recommend to improve model performance?
+
+Collect more and more diverse training data, add data augmentation (e.g., flips, small rotations, brightness changes).
+Try to use merch pics without razorbacks to make the model more realistic and usable for detecting unlicenced merch.
+Tune hyperparameters more and test different seeds to make sure the model is performing good
